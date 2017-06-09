@@ -5,19 +5,22 @@ import { HttpModule } from '@angular/http';
 
 // Materialize css for ng2
 import { MaterializeModule } from "angular2-materialize";
-
+// Components
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { ProductFilterPipe } from './products/product-filter.pipe';
-
+import { ProductFilterPipe } from './products/pipes/product-filter.pipe';
+import { StarComponent } from './products/shared/star/star.component';
+// Services
+import { ProductService } from './products/services/product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductDetailComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { ProductFilterPipe } from './products/product-filter.pipe';
     //Materilize css for ng2
     MaterializeModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

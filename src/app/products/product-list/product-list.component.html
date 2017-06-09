@@ -2,7 +2,7 @@
   <div class="col s12">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">Product List</span>
+        <span class="card-title">{{pageTitle}}</span>
         <div class="row">
           <div class="input-field col s12">
             <input id="filter-by" type="text" class="validate" [(ngModel)]="filterList" >
@@ -14,7 +14,7 @@
           <div class="col s6">
             <h4 for="filter-by">Filtered By: {{filterList}}</h4>
           </div>
-          <table class="centered highlight">
+          <table class="highlight">
             <thead>
               <tr>
                   <th>
@@ -40,7 +40,12 @@
                 <td>{{product.productCode | lowercase}}</td>
                 <td>{{product.releaseDate}}</td>
                 <td>{{product.price | currency: 'USD': true: '1.2-2'}}</td>
-                <td>{{product.starRating}}</td>
+                <td>
+                  <app-star 
+                  [rating]='product.starRating'
+                  (ratingClicked)='onRatingClicked($event)'
+                  ></app-star>
+                </td>
               </tr>
              
             </tbody>
