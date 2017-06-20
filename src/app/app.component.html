@@ -1,3 +1,16 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right">
+      <li><a [routerLink]="['/welcome']">Welcome</a></li>
+      <li><a [routerLink]="['/products']">Products</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
-  <app-product-list></app-product-list>
+  <router-outlet></router-outlet>
+  <!--<app-welcome></app-welcome>
+  <app-product-list></app-product-list>-->
 </div>
